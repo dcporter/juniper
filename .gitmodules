@@ -1,0 +1,9 @@
+[submodule "frameworks/sproutcore"]
+	path = frameworks/sproutcore
+	url = https://github.com/sproutcore/sproutcore.git
+[submodule "frameworks/sproutcore-wysiwyg"]
+	path = frameworks/sproutcore-wysiwyg
+	url = https://github.com/dcporter/sproutcore-wysiwyg.git
+[submodule "frameworks/sc-local-storage"]
+	path = frameworks/sc-local-storage
+	url = https://gist.github.com/9514029.git

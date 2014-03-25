@@ -1,0 +1,232 @@
+
+/* GENERAL */
+$theme.sc-main {
+  background-color: #061723;
+  background-image: -moz-linear-gradient(top, #05070F, #133239);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#05070F), to(#133239));
+
+  font-family: 'Open Sans', Helvetica, sans-serif;
+}
+$theme.sc-view {
+  font-family: 'Open Sans', Helvetica, sans-serif;
+}
+
+
+/* MENU */
+$theme.collection.juniper-menu-tags-list {
+  background: transparent;
+}
+$theme.juniper-menu-item {
+  &.sel {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .juniper-menu-name {
+    position: absolute;
+    left: 45px;
+    top: 0; bottom: 0; right: 0;
+
+    color: $theme-white;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 40px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &.juniper-menu-archive-item > .juniper-menu-name {
+    font-style: italic;
+  }
+  .juniper-menu-icon {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 14px;
+    top: 50%;
+    margin-top: -10px;
+    &.all-notes {
+      @include slice('../images/menu-icon-logo.png');
+    }
+    &.tag {
+      height: 8px;
+      margin-top: -4px;
+      width: 16px;
+      margin-left: 2px;
+      background-color: $theme-white;
+      border-radius: 4px;
+    }
+    &.archive {
+      @include slice('../images/menu-icon-archive.png');
+    }
+    /* TODO: this is fun and all but probably should be an image resource. */
+    &.typography:before {
+      content: 'A';
+      color: $theme-white;
+      font-size: 1.3em;
+      margin-right: 1px;
+    }
+    &.typography:after {
+      content: 'A';
+      color: $theme-white;
+    }
+    &.credits {
+      height: 24px;
+      margin-top: -12px;
+      width: 23px;
+      margin-left: -1px;
+      @include slice('../images/menu-icon-sproutcore.png');
+    }
+  }
+}
+
+/* APP */
+$theme.juniper-app-pane {
+  box-shadow: 0 0 1px #000;
+  background-color: $theme-white;
+}
+
+/* HEADER BAR */
+
+$theme.juniper-header-bar {
+  background-color: $theme-main-color;
+  color: white;
+  $theme.juniper-title {
+    font-size: 21px;
+    line-height: 46px;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    .juniper-light-text &{
+      font-weight: 300;
+    }
+    .juniper-regular-text &{
+      font-weight: 400;
+    }
+  }
+  $theme.juniper-small-title {
+    font-size: 17px;
+    line-height: 46px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    &.active {
+      opacity: 0.5;
+    }
+  }
+}
+
+$theme.juniper-header-button.active {
+  opacity: 0.5;
+}
+
+$theme.juniper-back-button {
+  .left, &.active > .left {
+    height: 20px;
+    margin-top: 13px;
+    width: 11px;
+    margin-left: 12px;
+  }
+  .left, &.active > .left {
+    display: block;
+    @include slice('../images/back-icon.png');
+  }
+  &.active {
+    opacity: 0.5;
+  }
+
+  .sc-button-label {
+    height: 100%;
+  }
+
+  .middle, .right {
+    display: none;
+  }
+}
+
+$theme.juniper-add-button {
+  @include slice('../images/add-icon.png');
+}
+$theme.juniper-share-button {
+  @include slice('../images/share-icon.png');
+}
+
+
+/* TOOLBARS */
+
+$theme.juniper-subheader-toolbar {
+  background-color: #DDD;
+  border-bottom: 1px solid black;
+  $theme.juniper-subheader-button {
+    label.sc-regular-size.sc-button-label {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 7px;
+      text-shadow: none;
+      font-weight: 700;
+      color: $theme-main-color;
+      text-transform: lowercase;
+      font-variant: small-caps;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+    .middle {
+      display: block;
+    }
+    &.juniper-share-mail-button > .middle {
+      @include slice('../images/share-mail-icon.png');
+      height: 24px;
+      width: 38px;
+      margin: 19px auto;
+    }
+  }
+}
+
+$theme.juniper-toolbar-overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+/* CONTENT AREA */
+
+$theme.juniper-logo-ghost {
+  @include slice('../images/vesper-logo-ghost.png');
+}
+$theme.juniper-no-notes-label {
+  text-align: center;
+  color: #D9DDE1;
+  font-size: 15px;
+}
+
+/* BREVIARY / LIST ITEM VIEW */
+$theme.juniper-note-breviary {
+  .juniper-note-breviary-wrapper {
+    margin: auto;
+    /* Weird transparent-border-plus-padding hack to prevent overflow from being visible in the padding. */
+    border: 10px solid transparent;
+    padding: 0 6px;
+    max-height: -webkit-calc(100% - 20px);
+    max-height: calc(100% - 20px);
+    width: -webkit-calc(100% - 32px);
+    width: calc(100% - 32px);
+    max-width: 400px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  &.active {
+    background-color: #E8EAEC;
+  }
+  &.is-reindexing {
+    opacity: 0;
+  }
+  &.spare-breviary-view {
+    /*transition: box-shadow 0.3s linear;*/
+    &.is-dragging {
+      background-color: $theme-white;
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    }
+  }
+}

@@ -1,0 +1,207 @@
+
+$theme.juniper-notes-view {
+  background-color: $theme-white;
+}
+
+$theme.juniper-delete-button {
+  @include slice('../images/trash-icon.png');
+}
+$theme.juniper-archive-button {
+  @include slice('../images/archive-icon.png');
+}
+$theme.juniper-dearchive-button {
+  @include slice('../images/dearchive-icon.png');
+}
+
+$theme.juniper-note.juniper-note-wrapper {
+
+  margin: auto;
+  /* Weird transparent-border-plus-padding hack to prevent overflow from being visible in the padding. */
+  border: 10px solid transparent;
+  padding: 0 6px;
+  max-height: -webkit-calc(100% - 20px);
+  max-height: calc(100% - 20px);
+  width: -webkit-calc(100% - 32px);
+  width: calc(100% - 32px);
+  max-width: 400px;
+  overflow: hidden;
+
+/* TODO: Solve the blue-outside-the-lines issue.
+  &::selection, ::selection {
+    background-color: #D9DFE5;
+  }
+*/
+
+  /* WYSIWYG reset */
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  & > .sc-wysiwyg-editor-inner {
+    color: black;
+    div, p {
+      margin-bottom: 0;
+      line-height: inherit;
+    }
+    &:focus {
+      outline: none;
+    }
+    font-family: inherit;
+  }
+}
+
+$theme.note-lifecycle-toolbar {
+  background-color: $theme-white;
+}
+
+/* If we ever need to fake a caret.
+span.caret {
+  font-weight: 400;
+  display: inline-block;
+  width: 0;
+  margin-left: -5px;
+  margin-right: 5px;
+  font-size: 1.3em;
+}
+*/
+
+$theme.juniper-tag {
+  background-color: $theme-main-color;
+  border-radius: 50vh;
+  padding: 0 3px;
+  &, label.sc-button-label {
+    color: white;
+    line-height: 26px;
+    font-weight: bold;
+    text-shadow: none;
+    text-align: center;
+  }
+
+  &.active {
+    background-color: $theme-dark-color;
+  }
+
+  &.juniper-new-tag {
+    background-color: #D9DDE1;
+  }
+
+  &.disabled {
+    opacity: 1;
+  }
+}
+
+$theme.juniper-new-tag-editor {
+  border: 1px solid $theme-main-color;
+  border-radius: 13px;
+  outline: none;
+  background-color: transparent;
+  .border {
+    display: none;
+  }
+  .padding {
+    left: 10px;
+    right: 10px;
+  }
+  input.field {
+    text-align: left !important; /*ugh*/
+    color: $theme-main-color;
+    background-color: transparent;
+    line-height: 8px !important;
+    &::selection {
+      background-color: #D9DFE5; /*TODO: Get this working.*/
+    }
+  }
+}
+
+$theme.juniper-picker-pane {
+  .panel-background {
+    display: none;
+  }
+  .sc-pointer {
+    background-image: none;
+    width: 0;
+    height: 0;
+    /* Each pane should implement its own triangle */
+  }
+  & > .sc-view {
+    background-color: transparent;
+  }
+}
+
+$theme.juniper-tag-suggestion-menu {
+  border-radius: 14px;
+  background-color: white;
+  .sc-pointer.perfectTop {
+    bottom: -7px;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 10px solid #EC803D;
+  }
+  .sc-pointer.perfectLeft {
+    right: -7px;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 7px solid #EC803D;
+  }
+  .sc-pointer.perfectRight {
+    left: -7px;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-right: 10px solid #EC803D;
+  }
+  $theme.juniper-tag-suggestion-button {
+    background-color: #EC803D;
+    &.first {
+      border-top-left-radius: 14px;
+      border-bottom-left-radius: 14px;
+    }
+    &.last {
+      border-top-right-radius: 14px;
+      border-bottom-right-radius: 14px;
+    }
+    label.sc-button-label {
+      color: $theme-white;
+      text-shadow: none;
+      line-height: 28px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    &.active > label.sc-button-label {
+      color: #F2BE9C;
+    }
+  }
+}
+
+$theme.juniper-tag-menu {
+  .sc-pointer.perfectTop {
+    bottom: -10px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid black;
+  }
+  .sc-pointer.perfectLeft {
+    right: -10px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid black;
+  }
+  .sc-pointer.perfectRight {
+    left: -10px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid black;
+  }
+  $theme.juniper-tag-menu-button {
+    background-color: black;
+    border-radius: 7px;
+    label.sc-button-label {
+      color: $theme-white;
+      text-shadow: none;
+      line-height: 37px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    &.active {
+      background-color: #333;
+    }
+  }
+}

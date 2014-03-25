@@ -1,0 +1,70 @@
+
+$theme.juniper-credits {
+  background-color: $theme-white;
+  text-align: center;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  -webkit-user-select: none;
+
+  -webkit-transform: translate3d(0, 0, 0); /*pop-in fix*/
+
+  .juniper-credits-tagline {
+    margin-top: 42px;
+    font-size: 16px;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  .juniper-credits-link {
+    text-decoration: underline;
+    margin-top: 3px;
+    font-size: 16px;
+  }
+  .juniper-credits-sproutcore {
+    margin-top: 55px;
+  }
+  .juniper-credits-source {
+    margin-top: 12px;
+    & > a {
+      font-size: 12px;
+    }
+  }
+
+  .juniper-credits-tag {
+    margin-top: 186px;
+    height: 78px;
+    margin-left: 23.75%;
+    background-color: $theme-main-color;
+    border-radius: 50vh 0 0 50vh;
+  }
+
+  .juniper-credits-inspired-by {
+    margin-top: 34px;
+    margin-bottom: 6px;
+    font-size: 12px;
+  }
+  .juniper-credits-title > div {
+    margin: 0 auto;
+    height: 39px;
+    width: 105px;
+    @include slice('../images/movie-title.png');
+  }
+  .juniper-credits-production {
+    text-transform: lowercase;
+    font-variant: small-caps;
+    font-size: 11px;
+  }
+  .juniper-credits-copyright {
+    margin: 40px auto;
+    width: 250px;
+    font-size: 10px;
+  }
+}
+
+@media all and (max-width:400px) {
+  $theme.juniper-credits > .juniper-credits-sproutcore {
+    margin-top: 25px;
+  }
+}

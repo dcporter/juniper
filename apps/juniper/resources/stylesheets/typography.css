@@ -1,0 +1,69 @@
+
+/* GENERAL (HOPEFULLY) TYPOGRAPHY */
+.juniper-note-text, .juniper-note-text > .sc-wysiwyg-editor-inner {
+  /* TEXT SIZE */
+  /*line-height: 21px;*/
+  line-height: 1.25em;
+  .juniper-text-size-0 &{
+    font-size: 15px;
+  }
+  .juniper-text-size-1 &{
+    font-size: 17px;
+  }
+  .juniper-text-size-2 &{
+    font-size: 21px;
+  }
+  .juniper-text-size-3 &{
+    font-size: 25px;
+  }
+  .juniper-text-size-4 &{
+    font-size: 30px;
+  }
+
+  /* TEXT WEIGHT */
+  .juniper-light-text &{
+    font-weight: 300;
+  }
+  .juniper-regular-text &{
+    font-weight: 400;
+  }
+
+  /* TITLE TEXT */
+  &.juniper-note-title {
+    .juniper-light-text &{
+      font-weight: 700;
+    }
+    .juniper-regular-text &{
+      font-weight: 800;    
+    }
+    .juniper-small-caps &{
+      text-transform: lowercase;
+      font-variant: small-caps;
+
+      .juniper-text-size-0 &{
+        font-size: 14px;
+      }
+      .juniper-text-size-1 &{
+        font-size: 16px;
+      }
+      .juniper-text-size-2 &{
+        font-size: 18px;
+      }
+      .juniper-text-size-3 &{
+        font-size: 20px;
+      }
+      .juniper-text-size-4 &{
+        font-size: 22px;
+      }
+
+    }
+  }
+
+  /* ARCHIVED TEXT */
+  .archived &{
+    font-style: italic;
+  }
+  &.archived {
+    font-style: italic;
+  }
+}

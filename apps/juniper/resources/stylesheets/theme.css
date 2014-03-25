@@ -1,0 +1,28 @@
+
+body {
+  min-height: 196px;
+  min-width: 320px;
+  /* For performance reasons (todo: verify), let's turn this off if we're not on a mac. */
+  &.mac {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+$theme.collection {
+  background-color: $theme-white;
+}
+
+/* Button theme reset */
+$theme.juniper-button, $theme.juniper-button.sel, $theme.juniper-button.active {
+  .left, .middle, .right {
+    display: none;
+  }
+  label.sc-button-label {
+    padding: 0;
+    height: auto;
+  }
+}
+
+$theme.juniper-modal-pane {
+  background-color: rgba(0, 0, 0, 0.25);
+}

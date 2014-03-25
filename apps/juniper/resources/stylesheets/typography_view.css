@@ -1,0 +1,165 @@
+
+$theme.juniper-typography-view {
+  background-color: #F0F0F0;
+
+  $theme.juniper-typography-control {
+    /* TODO: 1 real pixel border (via gradients for example). */
+    border-top: 1px solid #C5C5C5;
+    border-bottom: 1px solid #C5C5C5;
+    background-color: $theme-white;
+  }
+
+  .juniper-typography-title {
+    line-height: 43px;
+    font-size: 18px;
+    color: $theme-main-color;
+  }
+  .juniper-typography-header {
+    font-size: 19px;
+    color: $theme-main-color;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    font-weight: 600;
+  }
+}
+
+$theme.checkbox.juniper-toggle-button {
+  -webkit-transform: translate3d(0, 0, 0); /* pop-in fix */
+  background-color: #E7E7E7;
+  border-radius: 50vh;
+  overflow: visible;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
+
+  span.button {
+    margin-top: 1px;
+    margin-left: 1px;
+    margin-right: 1px;
+    height: 28px;
+    width: 28px;
+    left: 0;
+    -webkit-transition: left 0.2s ease, width 0.2s ease;
+    transition: left 0.2s ease, width 0.2s ease;    
+
+    background: white;
+    background-image: none;
+    border-radius: 50vh;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  &.active {
+    span.button {
+      body:not(.ios) &{ width: 35px; }
+      background-image: none;
+      /*box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);*/
+    }
+  }
+  &.sel {
+    background-color: $theme-main-color;
+    span.button {
+      left: -webkit-calc(100% - 30px);
+      left: calc(100% - 30px);
+    }
+    &.active > span.button {
+      body:not(.ios) &{
+        left: -webkit-calc(100% - 37px);
+        left: calc(100% - 37px);
+      }
+    }
+  }
+}
+
+$theme.juniper-typography-letter {
+  color: $theme-main-color;
+
+  -webkit-transform: translate3d(0, 0, 0); /* pop-in fix */
+
+  /* Layout on these guys works but is super fragile. Could be improved. */
+  &.juniper-typography-wee-letter {
+    font-size: 13px;
+    line-height: 26px;
+  }
+  &.juniper-typography-big-letter {
+    font-size: 24px;
+    line-height: 18px;
+  }
+}
+
+$theme.juniper-slider {
+  span.track {
+    background-image: none;
+    background-color: #8A8A8A;
+    height: 1px;
+
+    .left, .middle, .right, &:before, &:after {
+      position: absolute;
+      width: 1px;
+      height: 12px;
+      margin-top: -6px;
+      background-image: none;
+      background-color: #8A8A8A;
+    }
+    &:before {
+      left: 0;
+      content: '';
+    }
+    .left {
+      left: 25%;
+    }
+    .middle {
+      left: 50%;
+    }
+    .right {
+      left: 75%;
+    }
+    &:after {
+      left: 100%;
+      content: '';
+    }
+
+    img.sc-handle {
+      background-image: none;
+        height: 28px;
+        width: 28px;
+        margin-top: -15px;
+        margin-left: -15px;
+        background: white;
+        background-image: none;
+        border-radius: 50vh;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+        z-index: 1; /*sigh. jumps it up over top of its parent's :after pselement.*/
+    }
+  }
+  &.active > span.track > img.sc-handle {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+  }
+}
+
+$theme.juniper-text-weight-button {
+  &:not(.bottom) {
+    border-bottom: 1px solid #CACACA;
+  }
+  .juniper-text-weight-button-label {
+    margin-left: 22px;
+  }
+  .juniper-text-weight-button-check {
+    position: absolute;
+    height: 13px;
+    width: 12px;
+    right: 22px;
+    top: 50%;
+    margin-top: -6px;
+    @include slice('../images/check.png');
+    display: none;
+    -webkit-transform: translate3d(0, 0, 0); /* pop-in fix */
+  }
+  &.active > .juniper-text-weight-button-check {
+    display: block;
+  }
+}
+
+$theme.juniper-typography-control {
+  .juniper-note-breviary-wrapper {
+    max-width: 288px;
+    -webkit-line-clamp: initial;
+  }
+}

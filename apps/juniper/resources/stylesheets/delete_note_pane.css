@@ -1,0 +1,30 @@
+
+$theme.juniper-delete-confirm-pane {
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+
+  & > .panel-background {
+    display: none;
+  }
+
+  $theme.juniper-delete-confirm-button {
+    color: #A2191D;
+    border-bottom: 1px solid #B6B6B6;
+  }
+  $theme.juniper-delete-cancel-button {
+    color: black;
+  }
+  $theme.juniper-delete-confirm-button, $theme.juniper-delete-cancel-button {
+    background-color: $theme-white;
+    label.sc-button-label {
+      line-height: 44px;
+      font-size: 19px;
+      font-weight: 600;
+    }
+    &.active {
+      opacity: 1;
+      background-color: #D9D9D9;
+    }
+  }
+}

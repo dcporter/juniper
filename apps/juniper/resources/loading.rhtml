@@ -1,0 +1,24 @@
+<% content_for :loading do %>
+<% # Any HTML in this file will be visible on screen while your page loads
+   # its application JavaScript.  SproutCore applications are optimized for 
+   # caching and startup very fast, so your users will often only see this 
+   # content for a brief moment on their first app load, if at all.
+%>
+<div class="juniper-loading-header">
+  <div class="ace juniper juniper-back-button">
+    <div class="left"></div>
+  </div>
+</div>
+<div style="position: absolute; left: -4000px; width: 100px; font-family: 'Open Sans';">
+  <div style="font-weight: 300;">.</div>
+  <div style="font-weight: 400;">.</div>
+  <div style="font-weight: 600;">.</div>
+  <div style="font-weight: 700;">.</div>
+  <div style="font-weight: 800;">.</div>
+  <div style="font-weight: 300; font-style: italic;">.</div>
+  <div style="font-weight: 400; font-style: italic;">.</div>
+  <div style="font-weight: 700; font-style: italic;">.</div>
+  <div style="font-weight: 800; font-style: italic;">.</div>
+</div>
+
+<% end %>

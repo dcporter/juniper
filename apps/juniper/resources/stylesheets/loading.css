@@ -1,0 +1,12 @@
+
+#loading {
+  background: none;
+  background-color: $theme-white;
+}
+
+#loading > .juniper-loading-header {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 44px;
+  background-color: $theme-main-color;
+}
