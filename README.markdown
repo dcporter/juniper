@@ -287,11 +287,12 @@ and in general your users won't even be able see your app's "Loading..." screen 
 If you need to eke additional performance out for the user's initial load, you can split your app into
 modules and defer loading them until after the initial load is complete and the app is running.
 
-### License
+### License: The English Version
 
-This application's design and behavior is ©2014 Q Branch, and is used with permission. It may not be
-reproduced in whole or substantial part.
+This project is intended for inspiration and instruction, but it's based on the copyrighted design and
+behavior of Q Branch's Vesper, which is used with permission. I can give you permission to use any code
+in this project in any way you want, as long as it doesn't impinge on Q Branch's copyrighted design. I
+obviously can't give you any permissions regarding Q Branch's copyrighted designs, you'd have to talk to
+them about that.
 
-This application's source code is ©2014 Dave Porter. It is intended for inspiration and instruction, and
-portions which do not reproduce its copyrighted design and behavior in whole or substantial part may be
-used without restriction except as specified in the license. See the accompanying license for full details.
+See LICENSE.markdown for the legal version.
