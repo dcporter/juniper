@@ -16,13 +16,14 @@ This project exists:
 ### Guide to the Source
 
 A monolith of code is unapproachable, so here's a roadmap to get you in. If you have
-any questions about what something means, or how or why I've done it, please feel free
-to hit me up in [the issues](https://github.com/dcporter/juniper/issues), on
-[the IRC channel](http://sproutcore.com/community/#tab=irc), at
+any questions about how or why I've done something, please feel free to hit me up at
 [dcporter.net](http://dcporter.net), or on Twitter at
 [davecporter](https://twitter.com/davecporter), and I'll do my best to help you out.
-If you or your team is new to SproutCore, or if your company needs a great web app
-to extend its presence online and in mobile, please consider my
+For general SproutCore questions, there are generally folks on
+[the IRC channel](http://sproutcore.com/community/#tab=irc), and
+[the mailing list](https://groups.google.com/group/sproutcore) is always open. If you
+or your team is new to SproutCore, or if your company needs a great web app to extend
+its presence online and in mobile, please consider my
 [consultation/mentorship services](http://dcporter.net/hire-me/) to supercharge your
 team's trip up the SproutCore learning curve.
 
