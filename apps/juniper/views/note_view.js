@@ -10,6 +10,9 @@ V.NoteView = SC.View.extend({
     layout: { bottom: 44 },
     verticalOverlay: YES,
     verticalScrollerView: SC.OverlayScrollerView,
+
+    delaysContentTouches: NO,
+
     classNames: ['juniper-notes-view'],
 
     contentView: SC.View.extend({
@@ -159,6 +162,7 @@ V.NoteView = SC.View.extend({
         canScrollVertical: NO,
         alwaysBounceVertical: NO,
 
+        // There's always a bit of hackiness getting scroll view options to behave.
         isHorizontalScrollerVisible: function() { return NO }.property().cacheable(),
         canScrollHorizontal: YES,
         contentView: SC.View.extend({
@@ -166,7 +170,7 @@ V.NoteView = SC.View.extend({
           childViewLayoutOptions: {
             paddingBefore: 15,
             paddingAfter: 20,
-            spacing: 13 /*hack alert: this value depends on the invisible-to-SC padding in the tag views.*/
+            spacing: 13 /*hack alert: this value depends on the invisible-to-SC CSS padding in the tag views.*/
           },
           newTagContent: SC.Object.create({ name: 'Tag'.loc() }),
           content: null,

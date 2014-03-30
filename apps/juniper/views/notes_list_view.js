@@ -2,8 +2,16 @@
 sc_require('view_statecharts');
 
 V.NotesListView = SC.ScrollView.extend({
+  // This property takes us out of touch event hand-holding mode, giving me full control over the events (including
+  // responsibility for passing it back to the ScrollView if needed).
+  delaysContentTouches: NO,
+
+  // Usually, ScrollView chooses gutter scrollers for mouse devices and overlay scrollers for touch devices. These
+  // two properties give us overlay scrollers always.
   verticalOverlay: YES,
   verticalScrollerView: SC.OverlayScrollerView,
+
+  // We mix in the notes list statechart view here. See view_statecharts.js.
   contentView: SC.ListView.extend(V.NotesListViewStatechart, {
     wantsAcceleratedLayer: YES,
     contentBinding: SC.Binding.oneWay('V.notesListViewController.arrangedObjects'),
@@ -56,8 +64,8 @@ V.NotesListView = SC.ScrollView.extend({
     touchStart: function(evt) {
       return !!this.sendAction('touchStart', evt);
     },
-    touchesDragged: function(evt) {
-      return !!this.sendAction('touchesDragged', evt);
+    touchesDragged: function(evt, touches) {
+      return !!this.sendAction('touchesDragged', evt, touches);
     },
     touchEnd: function(evt) {
       return !!this.sendAction('touchEnd', evt);

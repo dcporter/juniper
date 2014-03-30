@@ -14,7 +14,8 @@ sc_require('panes/main_pane');
 V.mainPage = SC.Page.create({
 
   // UI constants.
-  MENU_TRANSITION_DURATION: 0.3,
+  MENU_TRANSITION_OPEN_DURATION: 0.3,
+  MENU_TRANSITION_CLOSED_DURATION: 0.25,
   MENU_CLOSED_OFFSET: -45,
   APP_PANE_OPEN_OFFSET: 282,
 

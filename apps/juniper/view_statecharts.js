@@ -60,8 +60,8 @@ V.MainViewStatechart = SC.mixin({}, SC.StatechartManager, {
             bottom: null
           });
           // Animate the views!
-          menuView.animate('left', 0, V.mainPage.MENU_TRANSITION_DURATION, this, this._menuAnimationDidFinish);
-          appView.animate('left', V.mainPage.APP_PANE_OPEN_OFFSET, V.mainPage.MENU_TRANSITION_DURATION, this, this._appPaneAnimationDidFinish);
+          menuView.animate('left', 0, V.mainPage.MENU_TRANSITION_OPEN_DURATION, this, this._menuAnimationDidFinish);
+          appView.animate('left', V.mainPage.APP_PANE_OPEN_OFFSET, V.mainPage.MENU_TRANSITION_OPEN_DURATION, this, this._appPaneAnimationDidFinish);
         },
         // If we don't explicitly wait on both, CSS transitions may still be active on views.
         _menuAnimationDidFinish: function() {
@@ -128,8 +128,8 @@ V.MainViewStatechart = SC.mixin({}, SC.StatechartManager, {
             bottom: null
           });
           // Animate the views!
-          menuView.animate('left', V.mainPage.MENU_CLOSED_OFFSET, V.mainPage.MENU_TRANSITION_DURATION, this, this._menuAnimationDidFinish);
-          appView.animate('left', 0, V.mainPage.MENU_TRANSITION_DURATION, this, this._appPaneAnimationDidFinish);
+          menuView.animate('left', V.mainPage.MENU_CLOSED_OFFSET, V.mainPage.MENU_TRANSITION_CLOSED_DURATION, this, this._menuAnimationDidFinish);
+          appView.animate('left', 0, V.mainPage.MENU_TRANSITION_CLOSED_DURATION, this, this._appPaneAnimationDidFinish);
         },
         // If we don't explicitly wait on both, CSS transitions may still be active on views.
         _menuAnimationDidFinish: function() {
@@ -219,6 +219,9 @@ V.MainViewStatechart = SC.mixin({}, SC.StatechartManager, {
             var previousListItem = this.getPath('owner.notesListViewOutlet.contentView').itemViewForContentObject(context.previousNote);
             if (previousListItem) previousListItem.adjust('opacity', 1);
           }
+        },
+        exitState: function() {
+          this.getPath('owner.noteViewOutlet.editorViewOutlet').resignFirstResponder();
         },
         doViewNotesList: function() {
           var content = V.noteViewController.get('content');
@@ -621,7 +624,7 @@ V.NotesListViewStatechart = SC.mixin({}, SC.StatechartManager, {
           this._timer = SC.Timer.schedule({
             target: this,
             action: 'didLinger',
-            interval: 350
+            interval: 300
           });
         }
         // Note down the important information.
@@ -669,12 +672,17 @@ V.NotesListViewStatechart = SC.mixin({}, SC.StatechartManager, {
         return YES;
       },
 
-      // If we drag left or right, 
-      touchesDragged: function(evt) {
+      // If the touch drags in any direction before the didLinger timer goes off, go to the appropriate state.
+      touchesDragged: function(evt, touches) {
         var deltaX = evt.pageX - this._eventOrigin.pageX,
             deltaY = evt.pageY - this._eventOrigin.pageY;
+        // If we've moved up or down, start scrolling and go back to readyState.
+        if (Math.abs(deltaY) > 4) {
+          touches.invoke('restoreLastTouchResponder');
+          this.gotoState('readyState');
+        }
         // If we've moved left by five pixels, slide open the item menu.
-        if (deltaY <= -5) {
+        else if (deltaX <= -5) {
           //this.gotoState('slidingItemOpenState', {/*TODO*/});
         }
         // TODO: If we've moved right by five pixels, pass this along to the pane to expose the menu.
