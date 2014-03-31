@@ -21,11 +21,15 @@ any questions about how or why I've done something, please feel free to hit me u
 [davecporter](https://twitter.com/davecporter), and I'll do my best to help you out.
 For general SproutCore questions, there are generally folks on
 [the IRC channel](http://sproutcore.com/community/#tab=irc), and
-[the mailing list](https://groups.google.com/group/sproutcore) is always open. If you
-or your team is new to SproutCore, or if your company needs a great web app to extend
-its presence online and in mobile, please consider my
-[consultation/mentorship services](http://dcporter.net/hire-me/) to supercharge your
-team's trip up the SproutCore learning curve.
+[the mailing list](https://groups.google.com/group/sproutcore) is always open.
+
+Other great SproutCore resources include [the Guides](http://guides.sproutcore.com/),
+and the excellent book
+[SproutCore Web Application Development](http://blog.sproutcore.com/sproutcore-book-available/)
+by our lead developer, Tyler Keating. If you or your team is new to SproutCore, or if
+your company needs a great web app to extend its presence online and in mobile, please
+consider my [consultation/mentorship services](http://dcporter.net/hire-me/) to
+supercharge your team's trip up the SproutCore learning curve.
 
 Cheers – Dave
 
