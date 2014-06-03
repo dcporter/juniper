@@ -28,6 +28,8 @@ V.NoteView = SC.View.extend({
         documentPadding: null,
         minHeight: 20,
 
+        carriageReturnText: '<br>',
+
         // Archived.
         classNameBindings: ['didStartArchived:archived'],
         didStartArchivedBinding: SC.Binding.oneWay('V.noteViewController.didStartArchived'),
@@ -93,6 +95,8 @@ V.NoteView = SC.View.extend({
           }
 
           // Make sure subsequent elements are bare text with proper line-breaks.
+          // TODO: See if we still need this after carriageReturnMarkup fixes in rich-text-editor (e.g.
+          // test with pasted content).
           var len = $contents.length,
               content, $content, $prev, i,
               previousWasUnwrapped, previousWasBr, previousIsNowBr;
