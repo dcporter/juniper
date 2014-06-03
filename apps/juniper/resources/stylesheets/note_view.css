@@ -42,9 +42,6 @@ $theme.juniper-note.juniper-note-wrapper {
       margin-bottom: 0;
       line-height: inherit;
     }
-    &:focus {
-      outline: none;
-    }
     font-family: inherit;
   }
 }
