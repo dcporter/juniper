@@ -61,10 +61,11 @@ via `:required => :sproutcore` (or `:required => [:sproutcore, ...]`). SproutCor
 is made up of a couple dozen sub-frameworks, which you can include individually if you
 prefer.
 
-`sproutcore-wysiwyg` is a rich text editor module for SproutCore that was developed by
-@JoeGaudet at LearnDot. I've forked it and modified it pretty heavily for use in this
-project; hopefully I'll be able to integrate those changes and commit them back at some
-point...
+`rich-text-editor` is a rich text module for SproutCore that was originally developed by
+@JoeGaudet at LearnDot. The official branch is at
+[github.com/sproutcore/rich-text-editor](https://github.com/sproutcore/rich-text-editor);
+I'm currently using the `team/dcporter/touch` branch which comes with provisional touch
+support.
 
 `sc-local-storage` is proof that [gists](https://gist.github.com/9514029.git) are
 repos too. It's a SproutCore Data Source which serializes its data to local storage

@@ -12,6 +12,6 @@
 
 # It is better to add :required targets here than in the global Buildfile.
 config :juniper,
-  :required => [:sproutcore, :"sproutcore-wysiwyg", :"sc-local-storage"],
+  :required => [:sproutcore, :"rich-text-editor", :"sc-local-storage"],
   :favicon => 'favicon.ico',
   :url_prefix => 'static'
